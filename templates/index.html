@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF-Word Converter</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(145deg, #0f1c2e, #1b2a3e);
+            color: #eaeaea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: linear-gradient(145deg, #1d2b3a, #112233);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 -4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 1.8rem;
+            color: #a0c4ff;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1rem;
+            margin-top: 10px;
+            display: block;
+            color: #c3d9ff;
+        }
+
+        input[type="file"] {
+            margin: 10px 0 20px;
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #3a4d65;
+            background: #112233;
+            color: #eaeaea;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        select {
+            margin: 10px 0 20px;
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #3a4d65;
+            background: #112233;
+            color: #eaeaea;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #0a6eaa;
+            color: #eaeaea;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #0e89cf;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #7895b2;
+        }
+
+        @media (max-width: 768px) {
+            .container h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            button {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MERUBAH PDF KE WORD DAN SEBALIKNYA</h1>
+        <form action="/convert" method="post" enctype="multipart/form-data">
+            <label for="file">Upload File:</label>
+            <input type="file" name="file" required>
+
+            <label for="conversion_type">Choose Conversion Type:</label>
+            <select name="conversion_type" required>
+                <option value="pdf_to_word">PDF to Word</option>
+                <option value="word_to_pdf">Word to PDF</option>
+            </select>
+
+            <button type="submit">RUBAH SEKARANG</button>
+        </form>
+        <footer>
+            <p>&copy; ksdhys</p>
+        </footer>
+    </div>
+</body>
+</html>
